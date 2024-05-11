@@ -17,7 +17,8 @@ class AddPlaceScreen extends ConsumerStatefulWidget {
 
 class _AddPlaceScreen extends ConsumerState<AddPlaceScreen> {
   final _formKey = GlobalKey<FormState>();
-  File? _selectedFile;
+  File? _selectedFile; // file that selected
+
 
   var _enteredTitle = '';
 

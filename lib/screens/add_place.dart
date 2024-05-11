@@ -6,8 +6,6 @@ import 'package:favorite_places/widgets/location_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../models/place.dart';
-
 class AddPlaceScreen extends ConsumerStatefulWidget {
   const AddPlaceScreen({super.key});
 
@@ -40,8 +38,7 @@ class _AddPlaceScreen extends ConsumerState<AddPlaceScreen> {
       return;
     }
 
-    var newPlace = Place(title: _enteredTitle, image: _selectedFile!);
-    ref.read(userPlacesProvider.notifier).addPlace(newPlace);
+    ref.read(userPlacesProvider.notifier).addPlace(_enteredTitle, _selectedFile!);
 
     Navigator.of(context).pop();
   }
